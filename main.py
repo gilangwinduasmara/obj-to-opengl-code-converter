@@ -39,8 +39,8 @@ def convert():
         for v in vert:
             # print("glVertex3f(", ",".join(
             #     [str(ve).split(".")[0]+"0" for ve in v]), ");\n")
-            app.setOutput('glVertex3f(')
-            app.setOutput(",".join([str(ve).split(".")[0]+".0" for ve in v]))
+            app.setOutput('glVertex3d(')
+            app.setOutput(",".join([str(ve) for ve in v]))
             app.setOutput(");\n")
 
         for tp in face:

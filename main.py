@@ -17,8 +17,10 @@ def convert():
     objects = []
 
     reComp = re.compile("(?<=^)(v |vn |vt |f )(.*)(?=$)", re.MULTILINE)
+
     with open(objFile) as f:
-        data = [line.group() for line in reComp.finditer(f.read())]
+        data = [line.group()
+                for line in reComp.finditer(f.read().replace("\t", ""))]
     v_arr, vn_arr, vt_arr, f_arr = [], [], [], []
     for line in data:
         tokens = line.split(' ')
